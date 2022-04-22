@@ -1,4 +1,4 @@
-import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import { BrowserRouter, Link, Route, Routes } from 'react-router-dom';
 import './App.css';
 
 import Manatee from '../Manatee/Manatee';
@@ -9,14 +9,14 @@ function App() {
   return (
     <div className="wrapper">
       <h1>Marine Mammals</h1>
+      <BrowserRouter>
       <nav>
         <ul>
-          <li><a href="/manatee">Manatee</a></li>
-          <li><a href="/narwhal">Narwhal</a></li>
-          <li><a href="/whale">Whale</a></li>
+          <li><Link to="/manatee">Manatee</Link></li>
+          <li><Link to="/narwhal">Narwhal</Link></li>
+          <li><Link to="/whale">Whale</Link></li>
         </ul>
       </nav>
-      <BrowserRouter>
         <Routes>
           <Route path="/manatee" element={<Manatee/>}/>
           <Route path="/narwhal" element={<Narwhal/>}/>
