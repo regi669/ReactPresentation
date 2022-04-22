@@ -1,10 +1,14 @@
 import React from 'react';
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
+import { incrementBird } from '../../store/birds/birds';
 import logo from './logo.svg';
 import './App.css';
 
 function App() {
+
   const birds = useSelector(state => state.birds);
+  const dispatch = useDispatch();
+
   return (
    <div className="wrapper">
     <h1>Bird List</h1>
@@ -27,7 +31,8 @@ function App() {
           <h3>{bird.name}</h3>
           <div>
           Views: {bird.views}
-          <button><span role="img" aria-label="add">➕</span></button>
+          <button onClick={() => dispatch(incrementBird(bird.name))}>
+            <span role="img" aria-label="add">➕</span></button>
           </div>
         </li>
       ))}
