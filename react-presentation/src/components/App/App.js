@@ -2,6 +2,8 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import './App.css';
 
 import Manatee from '../Manatee/Manatee';
+import Narwhal from '../Narwhal/Narwhal';
+import Whale from '../Whale/Whale';
 
 function App() {
   return (
@@ -9,7 +11,9 @@ function App() {
       <h1>Marine Mammals</h1>
       <BrowserRouter>
         <Routes>
-          <Route path="*" element={<Manatee/>}/>
+          <Route path="/manatee" element={<Manatee/>}/>
+          <Route path="/narwhal" element={<Narwhal/>}/>
+          <Route path="/whale" element={<Whale/>}/>
         </Routes>
       </BrowserRouter>
     </div>
