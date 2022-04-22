@@ -1,24 +1,34 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { incrementBird } from '../../store/birds/birds';
+import { addBird, incrementBird } from '../../store/birds/birds';
 import logo from './logo.svg';
 import './App.css';
 
 function App() {
 
+  const [birdName, setBird] = useState('');
   const birds = useSelector(state => state.birds);
   const dispatch = useDispatch();
+  const handleSubmit = event => {
+    event.preventDefault();
+    dispatch(addBird(birdName))
+    setBird('');
+  };
 
   return (
    <div className="wrapper">
     <h1>Bird List</h1>
 
-    <form>
+    <form onSubmit={handleSubmit}>
       <label>
         <p>
           Add Bird
         </p>
-        <input type="text" />
+        <input
+          type="text"
+          onChange={e => setBird(e.target.value)}
+          value={birdName}
+        />
       </label>
       <div>
         <button type="submit">Add</button>
