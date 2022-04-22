@@ -5,24 +5,10 @@ import App from './components/App/App';
 import reportWebVitals from './reportWebVitals';
 import { Provider } from 'react-redux';
 import { createStore } from 'redux';
+import birdApp from './store/birds/birds';
 
-const store = createStore(() => ({
-  birds: 
-  [
-    {
-      name: 'Jack',
-      views: 15
-    },
-    {
-      name: 'Maister',
-      views: 25
-    },
-    {
-      name: 'Jerry',
-      views: 36
-    }
-  ]
-}));
+const store = createStore(birdApp);
+
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
