@@ -4,8 +4,15 @@ import './index.css';
 import App from './components/App/App';
 import reportWebVitals from './reportWebVitals';
 import { Provider } from 'react-redux';
+/*
+* Next Step is to import createStore method from redux
+*/
 import { createStore } from 'redux';
 
+/*
+* After importing we need to use createStore
+* function with arrow function
+* in order to create birds list*/
 const store = createStore(() => ({
   birds: 
   [
@@ -25,6 +32,9 @@ const store = createStore(() => ({
 }));
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
+/*
+* After creating store we need to pass it to Provider prop called store
+* in order for it to be executed*/
 root.render(
   <React.StrictMode>
     <Provider store={store}>
