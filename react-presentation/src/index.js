@@ -5,8 +5,14 @@ import App from './components/App/App';
 import reportWebVitals from './reportWebVitals';
 import { Provider } from 'react-redux';
 import { createStore } from 'redux';
+/*
+* import birdApp from birds.js
+*/
 import birdApp from './store/birds/birds';
 
+/*
+* Init the store using createStore function and birdApp reducer
+*/
 const store = createStore(birdApp);
 
 
