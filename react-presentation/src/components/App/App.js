@@ -1,14 +1,25 @@
 import React from 'react';
+/*
+* Import useSelector and incrementBird
+*/
 import { useDispatch, useSelector } from 'react-redux';
 import { incrementBird } from '../../store/birds/birds';
-import logo from './logo.svg';
 import './App.css';
 
 function App() {
-
+  /*
+  * Create const birds as a useSelector in order to loop
+  * through all birds
+  */
   const birds = useSelector(state => state.birds);
+  /*
+  * Create dispatch in order to change elements inside birds list*/
   const dispatch = useDispatch();
 
+  /*
+  * Inside button add onClick event to listen for user clicks
+  * and after the user clicks the button call the dispatch function
+  * and inside this function call incrementBird function to add 1 views to choosen bird*/
   return (
    <div className="wrapper">
     <h1>Bird List</h1>
