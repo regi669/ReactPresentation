@@ -22,8 +22,7 @@ function App() {
         <Routes>
           <Route path="/manatee" element={<Manatee/>}/>
           <Route path="/narwhal" element={<Narwhal/>}/>
-          <Route exact path="/whale" element={<Whale/>}/>
-          <Route path="/whale/:type" element={<Whale/>}/>
+          <Route path="/whale/*" element={<Whale/>}/>
         </Routes>
       </BrowserRouter>
     </div>
