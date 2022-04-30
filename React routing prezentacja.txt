@@ -1,0 +1,37 @@
+Routery pomagają w tworzeniu URLów i nawigowaniu między nimi, tak żeby użytkownik mógł płynnie przechodzić między komponentami aplikacji, zachowując przy tym swój user state (zapisane dane użytkownika).
+
+Wymagania:
+- npm
+- Node.js
+- projekt w React
+
+Instalacja React Router:
+npm install react-router-dom
+
+1 - Tworzenie komponentów.
+3 komponenty - każdy jest funkcją zwracającą nazwę wodnego ssaka (manat, narwal, wieloryb).
+
+2 - Wyrenderowanie stworzonego komponentu w App.js.
+Chcę dodać wyświetlanie innych komponentów. Gdybym zrobił to przy użyciu useState Hooka, odświeżenie strony powodowałoby utratę wyboru użytkownika, więc niemógłby zapisać ani udostępnić swojego aktualnego user state w aplikacji. Dlatego w takiej sytuacji przydatny jest router, który zachowa user state i wygeneruje konkretny URL, który można zapisać/udostępnić.
+
+3 - Dodawanie routera.
+Route wyświetlający Manatee przy dowolnym URLu.
+
+4 - Dodanie konkretnych routes.
+Routes wyświetlające konkretne komponenty po dodaniu nazwy w URLu.
+
+5 - Dodanie nawigacji przez hyperlinki <a>.
+Przy każdym kliknięciu odświeża się strona razem z wszystkimi plikami w JavaScripcie. Można to rozwiązać używając komponentu <Link>.
+
+6 - Usprawnienie nawigacji (<a> -> <Link>).
+
+7 - Dodanie komponentów.
+2 komponenty - funkcje zwracające gatunki wielorybów, będą wyświetlane pod Whale przy podaniu parametru.
+
+8 - Dodanie przekazywania informacji parametrami wyszukiwania.
+Rozbudowa komponentu Whale przy użyciu hooka useLocation, żeby przy podaniu gatunku w parametrze 'type' wyświetlał odpowiedni komponent.
+
+9 - Przejście na przekazywanie informacji poprzez bezpośrednie dopisywanie do URLa.
+Możnaby dodać na sztywno URLe /whale/beluga i /whale/blue ale tylko w przypadku jeśli nie będzie później potrzeby dodawania kolejnych komponentów. Lepiej użyć hooka useParams, który wyciągnie przekazane parametry w URL i przekaże do obiektu, aby potem wyciągnąć z niego pole 'type' i wyrenderować odpowiedni komponent.
+
+10 - Zagnieżdżenie routów do komponentów Beluga i Blue w komponencie Whale.
